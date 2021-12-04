@@ -1,5 +1,5 @@
 - Run API [x]
-- Create test cases []
+- Create tests case []
 - Create endpoint to save string []
 - Create endpoint to get string by id []
 - Create service/method to encrypt string []
