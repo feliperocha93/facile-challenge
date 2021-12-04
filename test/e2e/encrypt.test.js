@@ -9,10 +9,12 @@ afterAll(() => {
 });
 
 describe('When to save a name', () => {
-  test('should save the name and return id and encrypted name', async () => {
-    const { body, status } = request(server).post(MAIN_ROUTE).send({
-      name: 'Faz certo - que dá certo!',
-    });
+  test('should save the name and return the properties id and encrypted_name', async () => {
+    const { body, status } = await request(server)
+      .post(MAIN_ROUTE)
+      .send({
+        name: 'Faz certo - que dá certo!',
+      });
 
     expect(status).toBe(201);
     expect(body).toHaveProperty('id');
@@ -20,7 +22,6 @@ describe('When to save a name', () => {
   });
 
   test.todo('should save the name encrypted in db');
-  test.todo('should return the successReturnPatter if everything ok');
   test.todo('should return a E_VALIDATION_FAILURE error if name is not exist');
 });
 
