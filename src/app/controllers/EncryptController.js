@@ -1,10 +1,13 @@
 const EncryptRepository = require('../repositories/EncryptRepository');
+const CryptoService = require('../services/CryptoService');
 
 class EncryptController {
   async store(request, response) {
     const { name } = request.body;
 
-    const result = await EncryptRepository.create(name);
+    const encryptedName = CryptoService.encrypt(name);
+
+    const result = await EncryptRepository.create(encryptedName);
 
     response.status(201).json(result);
   }
@@ -14,7 +17,9 @@ class EncryptController {
 
     const result = await EncryptRepository.findNameById(id);
 
-    response.json({ id: result.id, name: result.encrypted_name });
+    const name = CryptoService.decrypt(result.encrypted_name);
+
+    response.json({ id: result.id, name });
   }
 }
 

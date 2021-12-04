@@ -17,6 +17,18 @@ const testName = 'Faz certo - que dá certo!';
 let savedNameId;
 
 describe('When to save a name', () => {
+  test('should save the name encrypted in db', async () => {
+    const { body, status } = await request(server)
+      .post(MAIN_ROUTE)
+      .send({
+        name: testName,
+      });
+
+    expect(status).toBe(201);
+    expect(body.encrypted_name).not.toBe(testName);
+    savedNameId = body.id;
+  });
+
   test('should save the name and return the properties id and encrypted_name', async () => {
     const { body, status } = await request(server)
       .post(MAIN_ROUTE)
@@ -30,7 +42,6 @@ describe('When to save a name', () => {
     savedNameId = body.id;
   });
 
-  test.todo('should save the name encrypted in db');
   test.todo('should return a E_VALIDATION_FAILURE error if name is not exist');
 });
 
