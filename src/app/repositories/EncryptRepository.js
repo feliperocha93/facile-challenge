@@ -1,9 +1,9 @@
-const db = require('../../database')
+const db = require('../../database');
 
 class EncryptRepository {
   async create(encryptedName) {
     const [rows] = await db.query(`
-      INSERT INTO facile_challenge(encripted_name)
+      INSERT INTO names(encrypted_name)
       VALUES($1)
       RETURNING *
     `, [encryptedName]);

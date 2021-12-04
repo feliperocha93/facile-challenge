@@ -1,6 +1,6 @@
 CREATE DATABASE facile_challenge;
 
-CREATE TABLE IF NOT EXISTS encrypted_name (
+CREATE TABLE IF NOT EXISTS names (
   id SERIAL,
-  encripted_name VARCHAR NOT NULL
+  encrypted_name VARCHAR NOT NULL
 );
