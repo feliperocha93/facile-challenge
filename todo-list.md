@@ -5,7 +5,7 @@
 - Create endpoint to get string by id [x]
 - Create service/method to encrypt string [x]
 - Create service/method to decrypt string [x]
-- Create validation error []
+- Create validation error [x]
 - Create READ.ME []
 - Create Thunder Client file []
 - Publish in Heroku []

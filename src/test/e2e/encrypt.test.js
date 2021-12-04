@@ -1,7 +1,7 @@
 const request = require('supertest');
-const db = require('../../src/database');
+const db = require('../../database');
 
-const server = require('../../src/index');
+const server = require('../../index');
 
 const MAIN_ROUTE = '/encrypt';
 
@@ -39,10 +39,19 @@ describe('When to save a name', () => {
     expect(status).toBe(201);
     expect(body).toHaveProperty('id');
     expect(body).toHaveProperty('encrypted_name');
-    savedNameId = body.id;
   });
 
-  test.todo('should return a E_VALIDATION_FAILURE error if name is not exist');
+  test('should return a E_VALIDATION_FAILURE error if name is not exist', async () => {
+    const { body, status } = await request(server)
+      .post(MAIN_ROUTE)
+      .send({
+        first_name: testName,
+      });
+
+    expect(status).toBe(400);
+    expect(body.code).toBe('E_VALIDATION_FAILURE');
+    expect(body.message).toBe('O campo "name" é obrigatório.');
+  });
 });
 
 describe('When to find a name', () => {
@@ -54,5 +63,12 @@ describe('When to find a name', () => {
     expect(body.name).toBe(testName);
   });
 
-  test.todo('should return a not found error if id not exist');
+  test('should return a not found error if id not exist', async () => {
+    const { body, status } = await request(server)
+      .get(`${MAIN_ROUTE}/${123}`);
+
+    expect(status).toBe(404);
+    expect(body.code).toBe('E_NOT_FOUND');
+    expect(body.message).toBe('Nome não encontrado.');
+  });
 });
