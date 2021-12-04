@@ -2,7 +2,7 @@
 - Create tests case [x]
 - Create Database connection [x]
 - Create endpoint to save string [x]
-- Create endpoint to get string by id []
+- Create endpoint to get string by id [x]
 - Create service/method to encrypt string []
 - Create service/method to decrypt string []
 - Create validation error []

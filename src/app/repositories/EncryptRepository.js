@@ -10,6 +10,16 @@ class EncryptRepository {
 
     return rows;
   }
+
+  async findNameById(id) {
+    const [rows] = await db.query(`
+        SELECT *
+        FROM names
+        WHERE ID = $1
+      `, [id]);
+
+    return rows;
+  }
 }
 
 module.exports = new EncryptRepository();
