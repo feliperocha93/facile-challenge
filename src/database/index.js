@@ -1,11 +1,10 @@
 const { Client } = require('pg');
 
 const productionClient = new Client({
-  host: 'ec2-184-73-25-2.compute-1.amazonaws.com',
-  port: 5432,
-  user: 'bubkjefprgiefp',
-  password: '22067a846151d999e932470add0cb5a58d9455668c19ec5169a0f7ed3542af1e',
-  database: 'd4mpjsfgufodrn',
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 const testClient = new Client({
