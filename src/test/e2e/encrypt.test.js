@@ -11,6 +11,7 @@ beforeAll(() => {
 
 afterAll(() => {
   server.close();
+  db.disconnect();
 });
 
 const testName = 'Faz certo - que dá certo!';
@@ -65,7 +66,7 @@ describe('When to find a name', () => {
 
   test('should return a not found error if id not exist', async () => {
     const { body, status } = await request(server)
-      .get(`${MAIN_ROUTE}/${123}`);
+      .get(`${MAIN_ROUTE}/${1234578}`);
 
     expect(status).toBe(404);
     expect(body.code).toBe('E_NOT_FOUND');
