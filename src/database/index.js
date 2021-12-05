@@ -5,7 +5,7 @@ const client = new Client({
   port: 5432,
   user: 'root',
   password: 'root',
-  database: 'facile_challenge',
+  database: process.env.NODE_ENV === 'test' ? 'facile_challenge' : 'facile_challenge_prod',
 });
 
 client.connect();

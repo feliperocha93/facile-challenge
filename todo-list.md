@@ -7,6 +7,6 @@
 - Create service/method to decrypt string [x]
 - Create validation error [x]
 - Create READ.ME [x]
-- Create Thunder Client file []
-- Create production database connection []
+- Create production database connection [x]
 - Publish in Heroku []
+- Create Thunder Client file []
