@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js",
+    "test": "jest --detectOpenHandles --coverage",
     "test:watch": "jest --detectOpenHandles --watchAll --verbose=false"
   },
   "keywords": [],

@@ -6,6 +6,7 @@
 - Create service/method to encrypt string [x]
 - Create service/method to decrypt string [x]
 - Create validation error [x]
-- Create READ.ME []
+- Create READ.ME [x]
 - Create Thunder Client file []
+- Create production database connection []
 - Publish in Heroku []
