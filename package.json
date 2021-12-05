@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=test nodemon src/index.js",
+    "start": "node src/index.js",
+    "start:dev": "cross-env NODE_ENV=test nodemon src/index.js",
     "test": "cross-env NODE_ENV=test jest --detectOpenHandles --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --detectOpenHandles --watchAll --verbose=false"
   },
