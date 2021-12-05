@@ -8,5 +8,5 @@
 - Create validation error [x]
 - Create READ.ME [x]
 - Create production database connection [x]
-- Publish in Heroku []
-- Create Thunder Client file []
+- Publish in Heroku [x]
+- Create Thunder Client file [x]

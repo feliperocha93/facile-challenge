@@ -54,3 +54,10 @@ To run tests and watch changes
   yarn test:watch
 ```
 
+
+## Collection
+
+In the thunder_client folder, there is the API collection. To use it, you need download Thunder Client extension and import collection and env files that are inside the folder.
+
+First, click in Collections (Thunder Client NavBar - on the top) > import > select ```thunder-collection_Facile Challenge.json```. After it, click in Env > import > select ```thunder-environment_Facile Challenge.json```
+
